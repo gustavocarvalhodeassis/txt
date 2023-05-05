@@ -1,0 +1,125 @@
+.home {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+  .drawer {
+    width: 100px;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    background-color: var(--secondary-color);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .drawer-logo {
+      padding: 5px 10px;
+      display: flex;
+      height: min-content;
+      border: 2px var(--on-secondary-color) solid;
+      color: var(--on-secondary-color);
+      font-weight: 600;
+      font-size: 12px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 25px;
+
+      .drawer-logo-circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--on-secondary-color);
+      }
+    }
+
+    .drawer-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin: 0;
+      margin-top: 100px;
+
+      .item {
+        list-style-type: none;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        height: min-content;
+        border-radius: 5px;
+        background-color: rgba($color: #fff, $alpha: 0.00);
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        .drawer-item-icon {
+          transition: all 0.25s ease-in-out;
+
+          path {
+            color: var(--on-secondary-color);
+            transition: all 0.25s ease-in-out;
+          }
+
+          &.active {
+            path {
+              color: var(--primary-color);
+            }
+          }
+        }
+
+        .item-brand {
+          padding: 10px 25px;
+          left: 0px;
+          scale: 0;
+          opacity: 0;
+          position: absolute;
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--on-secondary-color);
+          border-radius: 25px;
+          background-color: var(--secondary-color);
+          transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+          background-color: rgba($color: #fff, $alpha: 0.05);
+
+          .drawer-item-icon {
+            scale: 1.2;
+          }
+
+          .item-brand {
+            left: 105px;
+            scale: 1;
+            opacity: 1;
+          }
+        }
+
+        &:active {
+          .drawer-item-icon {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .element-index {
+    width: 100%;
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header-action-icon {
+        cursor: pointer;
+        padding: 10px;
+
+        &.hover {
+          background-color: rgba($color: #000, $alpha: 0.05);
+        }
+      }
+    }
+  }
+}
